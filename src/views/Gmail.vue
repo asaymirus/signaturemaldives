@@ -28,7 +28,10 @@
         >
           <i class="el-icon-document-copy" /> Copy Signature HTML
         </el-button>
-        <div class="success-message" v-if="copySuccess">
+        <div
+          v-if="copySuccess"
+          class="success-message"
+        >
           <i class="el-icon-success" /> Signature copied to clipboard!
         </div>
       </div>
@@ -66,7 +69,11 @@
           <li>Click <strong>Save Changes</strong> at the bottom</li>
         </ol>
         <div class="image-preview">
-          <img src="@/assets/image/gmail-signature-guide.png" alt="Gmail Settings" v-if="false">
+          <img
+            v-if="false"
+            src="@/assets/image/gmail-signature-guide.png"
+            alt="Gmail Settings"
+          >
           <p style="color: #999; text-align: center;">
             Visual guide coming soon
           </p>
