@@ -35,6 +35,12 @@ export default new Router({
         import(/* webpackChunkName: "addons" */ './views/Addons.vue')
     },
     {
+      path: '/gmail',
+      meta: { title: 'Gmail integration' },
+      component: () =>
+        import(/* webpackChunkName: "gmail" */ './views/Gmail.vue')
+    },
+    {
       path: '/projects',
       meta: { title: 'Projects' },
       component: () =>

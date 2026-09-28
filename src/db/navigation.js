@@ -17,6 +17,10 @@ export default {
       path: 'addons'
     },
     {
+      name: 'Gmail',
+      path: 'gmail'
+    },
+    {
       name: 'Projects',
       path: 'projects'
     }

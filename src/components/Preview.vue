@@ -79,6 +79,11 @@
             type="primary"
             @click="copyHTML"
           >Copy as HTML</el-button>
+          <el-button
+            size="small"
+            type="success"
+            @click="copyToGmail"
+          ><i class="el-icon-circle-check" /> Copy to Gmail</el-button>
         </el-button-group>
         <br>
         <el-button
@@ -219,6 +224,18 @@ export default {
         document.execCommand('copy')
         this.gaEventClick('copy as select')
       }
+    },
+    copyToGmail () {
+      this.html = this.$refs.template.$el.outerHTML.replace(/<!---->/g, '')
+      setTimeout(() => {
+        this.$refs.html.select()
+        document.execCommand('copy')
+        this.$message.success('Signature copied! Go to Gmail tab to complete setup.')
+      }, 10)
+      this.gaEventClick('copy to Gmail')
+      setTimeout(() => {
+        this.$router.push('/gmail')
+      }, 500)
     },
     viewSource () {
       this.html = this.$refs.template.$el.outerHTML.replace(/<!---->/g, '')

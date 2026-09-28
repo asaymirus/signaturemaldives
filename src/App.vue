@@ -3,9 +3,12 @@
     id="app"
     v-page-loading="app.loading"
   >
-    <sidebar />
-    <config-panel />
-    <preview />
+    <header-component />
+    <div class="app-container">
+      <sidebar />
+      <config-panel />
+      <preview />
+    </div>
   </div>
 </template>
 
@@ -13,6 +16,7 @@
 import Sidebar from './components/Sidebar'
 import ConfigPanel from './components/ConfigPanel'
 import Preview from './components/Preview'
+import HeaderComponent from './components/Header'
 import { mapState } from 'vuex'
 
 export default {
@@ -20,7 +24,8 @@ export default {
   components: {
     Sidebar,
     ConfigPanel,
-    Preview
+    Preview,
+    HeaderComponent
   },
 
   computed: {
@@ -44,8 +49,13 @@ body {
 }
 #app {
   display: grid;
-  grid-template-columns: 85px 550px 1fr;
+  grid-template-rows: auto 1fr;
   height: 100vh;
+}
+.app-container {
+  display: grid;
+  grid-template-columns: 85px 550px 1fr;
+  height: 100%;
 }
 .desc {
   flex-grow: 1;
